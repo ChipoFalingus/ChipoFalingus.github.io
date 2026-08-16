@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; /* Prevents padding/borders from adding extra width */
+    box-sizing: border-box;
 }
 
 html {
@@ -20,6 +20,7 @@ body {
 
     min-height: 100vh;
     height: auto;
+}
 
 button {
     background-color: black;
@@ -41,13 +42,6 @@ button:hover {
     border-bottom: 6px double white;
 
     padding: 5px 16px;
-}
-
-p {
-    color: white;
-    font-size: 20px;
-    line-height: 1.5;
-    padding: 30px
 }
 
 main {
@@ -84,8 +78,20 @@ h1 {
     line-height: 1.5;
 }
 
+p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 0 20px 0px 20px;
+}
+
 .signature {
     display: block;
-    margin-top: 20px;
+    margin-right: 20px;
     text-align: right;
+}
+
+.bold {
+    display: block;
+    font-weight: bold;
 }
