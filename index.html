@@ -7,6 +7,45 @@
             <button type="button">Blog/Updates</button>
             </div>
             <div class="content">
+                <h>#3 ECS Architecture | 09/08/2026</h>
+                <p>
+                    Hello! I'm already really inconsistent with my blog posts. Anyway, I figured I
+                    should now talk about the backend architecture of the game, and how I used to be
+                    naive.
+                </p>
+                    <bold class="bold">Let me break it down:</bold>
+                <p>
+                    I am making a game that has a lot of different things in it. All of those things
+                    have vastly different functionality and behavior. I need a way to make certain items
+                    hold certain properties. The OLD way was a standard OOP (Object-Oriented Programming) approach. 
+                    Say I wanted to add a new plant into the game. I want this plant
+                    to grow, I want it to be harvestable, and I want it to attack when someone tries to pick it up.
+                    Fun! I would need to write code inside that class for all of these behaviors, which is doable
+                    and simple enough. But what if I wanted to add a new plant that does all of that AND it can produce
+                    berries? Well, I'd need to create a brand new class for that plant, copy all of the code, and then
+                    add new functionality. This approach scales terribly. I'll end up with tons of classes that all
+                    share copied code. Even worse, storing all of these different objects is a heirarchy nightmare.
+                </p>
+                    <bold class="bold">ECS fixes everything</bold>
+                <p>
+                    ECS stands for Entity-Component-System. It's a design pattern that is used in game development
+                    to help organize code and data. I'm going to simplify this for the sake of explanation. This
+                    approach uses something called entities. What you can do with entities is attach components to them.
+                    Components are just blocks of functionality. For example, I can write a component called "Harvestable",
+                    which tells the game that this entity can be harvested. I can also write a component called "Growable",
+                    which says that this entity can grow like a plant. This fixes all of the issues I listed above. Back to the
+                    plant example, I can create components "Harvestable", "Growable", and "Attackable" and then attach them to
+                    a plant entity. Now if I want it to produce berries, I write the new component and just attach it, and it works. All
+                    components are completely reusable and can be attached to anything. Want colonists to emit light? Sure!
+                    Walls can be eaten? Yeah! It's a very flexible system that makes adding new items and functionality
+                    incredibly easy.
+                </p>
+                <p>
+                    TL;DR: ECS is perfect for this game and OOP can burn in a fire.
+                </p>
+                <span class="signature">-ChipoFling ☺︎</span>
+            </div>
+            <div class="content">
                 <h>#2 The Tech Stack | 08/26/2026</h>
                 <p>
                     One of the most important decisions in development is choosing what tools to use.
