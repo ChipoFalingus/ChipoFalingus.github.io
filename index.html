@@ -7,6 +7,44 @@
             <button type="button">Blog/Updates</button>
             </div>
             <div class="content">
+                <h>#4 Spatial Querying | 09/16/2026</h>
+                <p>
+                    The previous blog post went over ECS architecture, which is super useful for a project
+                    like this. But there is a big problem, a REALLY big problem with it. ECS stores entities
+                    in what's called a registry, which is essentially a big list of entities. The entities are 
+                    not sorted in any way, they are just added to the end of the list.
+                </p>
+                    <bold class="bold">Why This is a Problem</bold>
+                <p>
+                    Every object in the registry has an attached "Position" component which lists what coordinates
+                    that object is at. It's super easy retrieving the coordinates for a given object, but what
+                    about the other way around? The game rendering loop needs to check if there's an item on a given 
+                    tile so that it knows what character to put there. The game also contains several object search
+                    algorithms that need to know what objects are close to a given coordinate. How can I find what
+                    object(s) lie on a given coordinate, if any? I could loop through the entire registry to find
+                    that exact coordinate I'm looking for, but the registry is tens, even hundreds of thousands of units long. And
+                    I would need to loop through it for EVERY SINGLE TILE ON SCREEN. So what to do...
+                </p>
+                    <bold class="bold">Hash Maps + Registry Hybrid</bold>
+                <p>
+                    This might get a little confusing if you're unfamiliar with hash maps, but I'll do my best to explain.
+                    A hash map is sort of like a list, but the way you access elements is with a key. You input a key, and
+                    get its corresponding element. The main appeal of this data structure is that accessing any element you want 
+                    is really fast (O(1) time complexity if you care). We can use this to store items at given coordinates.
+                    The element we want to store is a list of items on a tile, and the key will be the coordinates of those items.
+                    Now I can retrieve items quickly by inputing their coordinates. The registry remains untouched, as it is still
+                    the way to access information about a given object. The only downside is adding or removing objects is a little
+                    finicky. Objects need to be added/removed from both the hash map and registry, or else it will exist as a ghost
+                    object in memory and take away precious performance. But besides that, this is a huge performance boost and
+                    doesn't even cost that much memory to store.
+                </p>
+                <p>
+                    P.S. The amount of blogs I have is starting to make this site really long. I'll look into updating
+                    it to include different pages for each entry.
+                </p>
+                <span class="signature">-ChipoFling ☺︎</span>
+            </div>
+            <div class="content">
                 <h>#3 ECS Architecture | 09/08/2026</h>
                 <p>
                     Hello! I'm already really inconsistent with my blog posts. Anyway, I figured I
