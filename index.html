@@ -7,6 +7,60 @@
             <button type="button">Blog/Updates</button>
             </div>
             <div class="content">
+                <h>#5 The World | 09/29/2026</h>
+                <p>
+                    Time to talk about the actual foundation of the game, the world generation! The world
+                    generation for this game is in an early state right now and is not super fleshed out,
+                    so I'll cover ideas I have and some general game design on how to build an interesting and fun world.
+                </p>
+                <bold class="bold">How Does One Generate a World?</bold>
+                <p>
+                    Procedural generation is not as scary as a topic as most people might think. It's built on top
+                    of deterministic math operations. The math behind it is complicated and I'm not going to act
+                    like I understand it super well, so I'll cover the general idea. The world generation is built 
+                    of a combination of Voronoi Noise and Perlin Noise. Voronoi Noise is actually pretty simple, it's 
+                    a bunch of scattered dots and every position on the grid is attached to the closest dot. This
+                    creates cell-like patterns that determine patches of land. Then I use Perlin Noise (which is a lot more
+                    complicated) and layer that on top of the Voronoi pattern to make the altitudes more varied. I also
+                    use a slight jitter on the edges to make the shape more interesting. Making an interesting world
+                    is a matter of combining several layers of noise to create something unique. All the items (trees, rocks, etc.)
+                    use similar methods to determine placement.
+                </p>
+                <bold class="bold">What Does Deterministic Mean?</bold>
+                <p>
+                    I don't know if you were wondering, but it's still worth covering. Algorithms/Operations are considered
+                    deterministic if the same input ALWAYS returns the same output. There is zero randomness. This is how
+                    seeds work. If you've played a game that uses procedural generation, you're definitely familiar with
+                    seed values. Because the generation is deterministic, the same seed ALWAYS returns the same output.
+                    The only random part about world generation is figuring out what seed to use upon creation.
+                </p>
+                <bold class="bold">What's NOT Added In Yet</bold>
+                <p>
+                    The world generation creates cool looking islands, but they are really plain and uninteresting. There
+                    is little variation from one seed to the next. The next step will be adding in structures. Because I'm going
+                    for a zombie apocalypse type of thing, I want to add abandoned structures and roads. The area I'm working with is relatively 
+                    small, so I probably couldn't go with huge city centers or something like that. That does make me wonder if it's possible to 
+                    fully explore the island in very little time and have literally nothing else to see, but that will be an issue for future
+                    me. I'll probably also add in a fog mechanic where unexplored chunks cannot be seen at all until a colonist walks into it, 
+                    but I haven't fully decided on that yet.
+                </p>
+                <p>
+                    I also was thinking about creating a second layer for caves. Right now the metal resources in the game are spread out across
+                    the map in patches exactly like in Factorio. Adding a second layer will require large rework of all the systems I've 
+                    already put in place since they only work in a 2D setting. That being said, it could be a worthwhile investment should I ever
+                    commit to it.
+                </p>
+                <p>
+                    Last but not least, I want the world to be a product of the simulation. The random structures and items you find should feel
+                    intentional and not randomly placed down. There should be a storytelling element for anything you find in the world. This is 
+                    something I want to add in, but this will wait until far into the future when I have the groundwork all laid out.
+                </p>
+                <p>
+                    So there you go! Everything here is incredibly ambitious, but I feel it's all necessary for the game I want.
+                </p>
+                <span class="signature">-ChipoFling ☺︎</span>
+            </div>
+            <div class="content">
                 <h>#4 Spatial Querying | 09/16/2026</h>
                 <p>
                     The previous blog post went over ECS architecture, which is super useful for a project
