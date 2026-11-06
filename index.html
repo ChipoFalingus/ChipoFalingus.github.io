@@ -7,6 +7,57 @@
             <button type="button">Blog/Updates</button>
             </div>
             <div class="content">
+                <h>#6 The Colony | 11/06/2026</h>
+                <p>
+                    It's been a minute! I've been spending some time cleaning up code and figuring out how to implement various
+                    gameplay mechanics. While those are getting sorted out, I figured I should talk about how mechanics that surround
+                    colony development. 
+                </p>
+                <bold class="bold">Starting Out</bold>
+                <p>
+                    Upon creating a new game, the player will be presented with a minimap of the world. They will get to choose where
+                    they want to start their colony. The player will be able to see the terrain and any structures that are present in the world.
+                    New colonies will start with a few colonists and a small amount of resources, including food, some wood, and a weapon + ammo.
+                </p>
+                <bold class="bold">The Border</bold>
+                <p>
+                    Colonies, by default, will have a border surrounding the center. This border will determine the area that the player can build
+                    in. Harvesting resources outside the border will be possible, but it will have a restricted range (It's 100 tiles out right now,
+                    but that is subject to change). Players can expand their border by building structures close to the border, which will naturally
+                    expand it. The border mainly exists for performance reasons, but it also helps to keep player colonies more contained and manageable. The border will also be a visual representation of the colony's influence in the world.
+                </p>
+                <bold class="bold">Food</bold>
+                <p>
+                    Food is the most important resource in the game to manage. No food means unhappy/unenergetic colonists, which means no work gets done.
+                    The starting food supply will last a day or two, so players will need to quickly find something else. Unfortunately, there are no animals
+                    in this game (at least not yet), so players will heavily rely on plants for food. I'll maybe add fishing into the first version to
+                    help offset this. Players will be required to find seeds and plant them to grow food. Grown products can usually be eaten right away, but
+                    players can also cook them into more filling meals.
+                </p>
+                </p>
+                <bold class="bold">Rooms</bold>
+                <p>
+                    Rooms are created by surrounding an area with walls and a door. Rooms will be assigned a type based on the objects that are
+                    placed inside of it. If a room has a bed, it will be assigned as a bedroom. If it has a table and chairs, it will be assigned 
+                    as a dining room. What's the purpose? Colonists will get upset if they have to sleep or eat outside. Rooms
+                    also provide protection from zombies. Colonists will also recognize rooms as safe spaces and will prioritize moving into them
+                    should they be in danger.
+                </p>
+                <bold class="bold">Defense</bold>
+                <p>
+                    Players will have to defend their colony from zombies. Zombies will spawn in the world and will attempt to attack the colony. 
+                    The starting weapon is a pistol, which can hold off a couple of zombies, but players will need to find metal resources to craft
+                    better weapons and armor. Players will also be able to build walls to keep zombies out, but they will need to be careful as zombies
+                    can break down walls. Guard posts can be built and colonists can be assigned as guards to be stationed or follow patrol routes.
+                </p>
+                <p>
+                    So that's a general overview of some basic mechanics. I have a lot more ideas for the colony, but for now I want to focus on
+                    the basic stuff and get it working. These are the core features that will be present in the first version of the game and are
+                    the foundation for future stuff, so I want to make sure they are solid before moving on.
+                </p>
+                <span class="signature">-ChipoFling ☺︎</span>
+            </div>
+            <div class="content">
                 <h>#5 The World | 09/29/2026</h>
                 <p>
                     Time to talk about the actual foundation of the game, the world generation! The world
